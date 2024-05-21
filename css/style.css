@@ -1,0 +1,341 @@
+:root {
+    --deep-navy: #011329;
+    /* Azul Marino Profundo para fondos */
+    --sky-blue: #7AB6D9;
+    /* Azul Cielo Claro para detalles y enlaces */
+    --pearl-gray: #D9E1E8;
+    /* Gris Perla para fondos secundarios y texto no primario */
+    --white: #FFFFFF;
+    /* Blanco para texto y elementos que necesiten alto contraste */
+    --metallic-gold: #D4AF37;
+    /* Oro Metálico para encabezados y elementos destacados */
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--black);
+    background-color: var(--deep-navy);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--metallic-gold);
+}
+
+h1 {
+    font-size: 5rem; /* Ejemplo para grandes titulares */
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+/* components */
+.button, .call-to-action {
+    background-color: var(--metallic-gold); /* Fondo dorado metálico */
+    color: var(--white); /* Texto blanco */
+    font-family: 'Playfair Display', serif; /* Fuente elegante para el botón */
+    font-size: 1.6rem; /* Tamaño de la fuente */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    cursor: pointer; /* Cursor de mano para indicar que es clickeable */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves para efectos */
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.button:hover, .call-to-action:hover {
+    background-color: var(--sky-blue); /* Cambio a azul cielo claro para el hover */
+    color: var(--deep-navy); /* Texto en azul marino profundo para contraste */
+    transform: scale(1.05); /* Aumento ligero del tamaño para efecto visual */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar sensación de elevación */
+}
+
+
+.container{
+    max-width: 100rem;
+    margin: 0 auto 7rem auto;
+}
+
+/** header **/
+header {
+    position: absolute; /* O 'fixed' si necesitas que sea fijo */
+    width: 100%;
+    background: transparent; /* Hace el fondo del header transparente */
+    z-index: 1000; /* Asegura que el header se mantenga sobre .hero */
+    top: 0;
+    left: 0;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    /* Tres áreas: logo, navegación, formulario de búsqueda */
+    gap: 2rem;
+    /* Espacio entre las columnas */
+    margin: 0 auto;
+    /* Centra el contenedor del header horizontalmente */
+}
+
+.logo-img img {
+    max-height: 10rem;
+    width: auto;
+}
+
+.nav-header {
+    display: flex;
+    /* Distribución horizontal de los enlaces */
+    justify-content: center;
+    /* Centra los enlaces horizontalmente en su espacio */
+    align-items: center;
+    text-align: center;
+}
+
+.nav-header a {
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 0 1.5rem;
+    transition: color .3s;
+}
+
+.nav-header a:hover, 
+.nav-header .active {
+    color: var(--metallic-gold);
+}
+
+
+.search {
+    background-color: hsla(0, 0%, 100%, .25);
+    box-shadow: none;
+    transition: background-color .4s cubic-bezier(.165, .84, .44, 1);
+    font-size: 12px;
+    padding: 6px 30px 6px 10px;
+    width: 100%;
+    border-radius: 1.5rem;
+    height: 3rem;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    background-color: hsla(0, 0%, 100%, .25);
+    box-shadow: none;
+    transition: background-color .4s cubic-bezier(.165, .84, .44, 1);
+    font-size: 1.5rem;
+    padding: 6px 30px 6px 10px;
+    width: 100%;
+    border-radius: 1.5rem;
+    height: 3.5rem;
+    border: none;
+    color: var(--white);
+}
+
+.search-input:hover, 
+.search-input:focus, 
+.search-input:-webkit-autofill{
+    background-color: hsla(0, 0%, 100%, 0.400);
+    outline: none;/* Elimina el borde de foco */
+
+    /* para que siga el mismo estilo en las sugerencias en navegador chrome y safari */
+    -webkit-text-fill-color: var(--black);
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0px 1000px hsla(0, 0%, 100%, 0.400) inset;
+}
+
+.search-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: .8rem;
+    margin: 0;
+    outline: none; /* Elimina el borde cuando se enfoca el botón */
+}
+
+.search-button img {
+    height: 2rem; /* Ajusta según el tamaño deseado del ícono */
+}
+
+/* hero */
+.hero {
+    width: 100%;
+    height: 675px;
+    background-image: 
+        linear-gradient(90deg, #011329 10%, rgba(1, 19, 41, 0) 40%, rgba(1, 19, 41, 0) 60%, #011329 90%),
+        linear-gradient(0deg, #011329 10%, rgba(1, 19, 41, 0) 40%, rgba(1, 19, 41, 0) 60%, #011329 90%),
+        url('../img/principal.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.hero-text {
+    position: absolute;
+    bottom: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ffffff;
+    z-index: 2;
+}
+
+
+@media (width >= 1400px){
+    .hero-text{
+        bottom: 33rem;
+    }
+}
+
+.hero-text h1 {
+    font-weight: bold;
+    margin-bottom: 1rem; /* Espacio debajo del encabezado */
+}
+
+.hero-text p {
+    font-size: 2rem; /* Tamaño de la fuente para el párrafo */
+    margin-bottom: 2rem; /* Espacio debajo del párrafo */
+}
+
+
+/* main */
+.titulo-main {
+    text-align: center;
+}
+
+.peliculas, .personas{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.pelicula, .persona{
+    transition: transform .3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.pelicula:hover, .persona:hover {
+    transform: scale(.8);
+}
+
+.pelicula p, .persona p {
+    text-align: center;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.pelicula img, .persona img{
+    border-radius: 2rem;
+}
+
+/* footer */
+.footer {
+    background-color: #021c3d; /* Fondo oscuro para destacar el pie de página */
+    color: #ffffff; /* Texto blanco para contrastar con el fondo oscuro */
+    padding: 4rem 2rem; /* Padding para dar espacio alrededor del contenido */
+    font-family: 'Arial', sans-serif; /* Fuente coherente con el resto del sitio */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Distribución equitativa de las secciones */
+    margin: 0 auto; /* Centra el contenido del footer dentro de un máximo de 1200px */
+}
+
+.footer-section {
+    margin-bottom: 2rem; /* Espacio entre secciones */
+}
+
+.footer-section h4 {
+    margin-bottom: 15px; /* Espacio debajo de los títulos de cada sección */
+    font-size: 18px; /* Tamaño más grande para los títulos de las secciones */
+}
+
+.footer-section ul {
+    list-style-type: none; /* Elimina los puntos de las listas */
+    padding: 0; /* Elimina el padding por defecto */
+}
+
+.footer-section ul li a {
+    color: #ffffff; /* Mantiene el texto de los enlaces en blanco */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 16px; /* Tamaño de fuente para los enlaces */
+    line-height: 1.6; /* Espacio vertical entre líneas de texto */
+}
+
+.footer-section a {
+    transition: color .3s;
+}
+
+.footer-section a:hover {
+    color: var(--metallic-gold);
+}
+
+.social-icons a {
+    position: relative;
+    display: inline-block;
+    margin-right: 1rem; /* Espacio entre iconos */
+    overflow: hidden; /* Asegura que los elementos absolutamente posicionados no se muestren fuera del enlace */
+}
+
+.social-icons img {
+    display: block;
+    width: 4rem; /* Tamaño uniforme para los íconos sociales */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+.normal-icon {
+    transition: opacity 0.3s ease; /* Suave transición para opacidad */
+}
+
+.hover-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease; /* Suave transición para opacidad */
+    opacity: 0; /* Inicialmente transparente */
+}
+
+.social-icons a:hover .normal-icon {
+    opacity: 0; /* Opacidad cero al hacer hover */
+}
+
+.social-icons a:hover .hover-icon {
+    opacity: 1; /* Opacidad completa al hacer hover */
+}
+
+.footer-credits {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 1.4rem; /* Tamaño de fuente menor para los créditos */
+    border-top: 1px solid #285C7F; /* Línea divisoria para separar los créditos */
+}
+
+

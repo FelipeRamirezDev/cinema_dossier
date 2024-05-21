@@ -1,0 +1,30 @@
+.main-galas{
+    margin-top: 15rem;
+}
+.main-galas .filters-menu {
+    margin-top: 4rem;
+}
+.info-gala {
+    color: #fff;
+    margin-bottom: 5rem;
+    font-size: 2rem;
+}
+.titulo-main-galas {
+    text-align: center;
+}
+.galas ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.galas li{
+    list-style: none;
+}
+.galas a {
+    display: flex;
+    justify-content: center;
+}
+
+.gala {
+    color: #fff;
+}

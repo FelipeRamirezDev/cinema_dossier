@@ -1,0 +1,129 @@
+:root {
+    --deep-navy: #011329;
+    /* Azul Marino Profundo para fondos */
+    --sky-blue: #7AB6D9;
+    /* Azul Cielo Claro para detalles y enlaces */
+    --pearl-gray: #D9E1E8;
+    /* Gris Perla para fondos secundarios y texto no primario */
+    --white: #FFFFFF;
+    /* Blanco para texto y elementos que necesiten alto contraste */
+    --metallic-gold: #D4AF37;
+    /* Oro Metálico para encabezados y elementos destacados */
+}
+
+.main-peliculas {
+    margin-top: 7rem;
+    padding: 5rem 0 15rem 0;
+}
+
+.titulo-main-peliculas {
+    text-align: center;
+}
+
+
+/* slider */
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 25rem;
+}
+
+.swiper-slide img{
+    width: 100%;
+}
+
+/* navegacion por botones */
+.swiper-button-prev, .swiper-button-next {
+    color: var(--metallic-gold);
+}
+
+/* filtro */
+.filters-menu, .filters-menu-favoritos {
+    margin-top: 12rem;
+    position: relative;
+    display: flex;
+    gap: 1rem;
+}
+
+.filters-menu-favoritos {
+    margin-top: 2rem;
+}
+
+.filter {
+    position: relative;
+    display: inline-block;
+}
+
+.filter-button {
+    text-decoration: none;
+    display: block;
+}
+
+.filter-options {
+    border-radius: 1rem;
+    padding: 1rem;
+    display: none;
+    position: absolute;
+    background-color: #021c3d;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.filter-options a {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: .5rem 1.5rem;
+    color: var(--white);
+    text-decoration: none;
+    background-color: transparent;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transición para color y fondo */
+}
+
+.filter-options a:hover {
+    color: var(--white);
+    background-color: var(--sky-blue);
+    border-radius: 1rem;
+}
+
+.filter:hover .filter-options,
+.filter:active .filter-options {
+    display: block;
+}
+
+
+.peliculas-filtradas {
+    display: block;
+}
+.peliculas-filtradas h2 {
+    color: var(--white);
+    
+}
+
+/* para info-pelicula.php */
+.info-pelicula {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+}
+
+.info-pelicula img{
+    border-radius: 2rem;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-pelicula {
+    color: var(--white);
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.texto-pelicula span {
+    color: var(--metallic-gold);
+}
