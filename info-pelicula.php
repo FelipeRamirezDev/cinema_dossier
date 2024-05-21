@@ -38,8 +38,8 @@ $pelicula = $statement->fetch(PDO::FETCH_ASSOC);
             <p><span>Lugar de Estreno: </span><?= $pelicula["lugar_estreno"] ?></p>
             <p><span>Sala de Exposición: </span><?= $pelicula["sala_exposicion"] ?></p>
             <p><span>Recaudacion de Primer Año: </span><?= $pelicula["recaudacion_primer_ano"] ?></p>
-            <p><span>Recaudacion Total: </span><?= $pelicula["recaudacion_total"] ?></p>
-            <p><span>Recaudacion Total: </span><?= $pelicula["recaudacion_total"] ?></p>
+            <p><span>Recaudacion Total: </span>$<?= $pelicula["recaudacion_total"] ?></p>
+            <p><span>Recaudacion Total: </span>$<?= $pelicula["recaudacion_total"] ?></p>
             <?php if (isset($_SESSION["user"])): ?>
                 <a class="button" style="width: 50%;" href="modulos/addFavoritoPelicula.php?id_pelicula=<?= $id_pelicula ?>">Agregar a Favoritos</a>
             <?php endif ?>
